@@ -1,0 +1,381 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+// Colors
+$color-black:rgb(20, 20, 20);
+$color-cyan:cyan;
+$color-white-overlay:rgba($color: #fff, $alpha: 0.7);
+$color-mento:rgba(255, 123, 0, 0.651);
+$color-dark-overlay:rgba($color: #000000, $alpha: 0.5);
+$color-light-gray:#333;
+$color-white:#eee;
+$color-red:red;
+$color-blue:rgb(33, 33, 243);
+$color-hotie:rgba(218, 4, 104,1);
+
+// sizes
+$sz:10px;
+// fonts 
+$text-bold:'Montserrat-Bold';
+$text-regular:'Montserrat-Regulaer';
+$text-italic:'Montserrat-Italic';
+$text-hacked:'Hacked';
+
+// mixins
+@mixin text($col,$font,$sm,$md,$lg){
+    margin: $sz auto;
+    color:$col;
+    font-family: $font;
+    font-size: $sm;
+    text-align: center;
+    @media (min-width:576px) {
+        font-size: $lg;
+        text-align: left;
+    }
+    @media (min-width:576px) and (max-width:768px){
+        font-size: $md;
+    }
+}
+
+
+.add{
+    @include text($color-mento,$text-bold,25px,30px,50px);
+    margin: 0;
+}
+
+
+.save{
+    @include text($color-white,$text-bold,25px,30px,50px);
+    margin: 0;
+}
+
+// Typography
+body {
+    background: url('../img/editician\ zone\ \(73\).jpg');
+    background-color: $color-dark-overlay;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:overlay;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: $color-cyan;
+    font-family: $text-regular
+}
+
+h1{
+    @include text($color-mento,$text-hacked,35px,45px,75px);
+    margin-bottom: 7vh;
+    width: 100%;
+    @media (min-width:576px) {
+        text-align: center;
+
+    }
+}
+h2{
+    @include text($color-white,$text-hacked,20px,30px,35px);
+}
+
+
+
+ul{
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    max-height: 40vh;
+    li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $sz/2;
+        background: linear-gradient(45deg, rgb(32, 4, 41),rgb(192, 11, 228));
+        margin-top: $sz;
+        transition: 250ms ease;
+        position: relative;
+    }
+
+    @media (min-width:576px) {
+        // overflow: initial;
+        height: 100%;
+        li{
+            padding: $sz+5;
+        }
+    }
+}
+
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+    @include text($color-hotie,$text-bold,35px,40px,50px);
+}
+
+.toggle{
+    transform: rotate(0);
+    transition: 250ms ease-in;
+}
+
+.gloak{
+    backdrop-filter: none;
+    ul{
+    position: relative;
+    li{
+
+        top: 0;
+        left: 0;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+    }
+    .toggle{
+        transform: rotate(180deg);
+    }
+
+
+    @media (min-width:576px) {
+        backdrop-filter: blur(2px);
+        &:hover{
+            backdrop-filter: blur(3px);
+            .toggle{
+                opacity: 1;
+            }
+        }
+        .toggle{
+            position: absolute;
+            opacity: 0;
+        }
+    }
+
+    @media (min-width:576px) and (max-width:768px) {
+        .toggle{
+            opacity: 1;
+        }
+    }
+
+}
+
+
+.main{
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    padding:$sz*2 $sz;
+    @media (min-width:576px) {
+        padding: $sz*2 $sz*4;
+    }
+}
+
+.todos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.holder{
+    height: min-content;
+    padding: $sz $sz*2+5;
+    border-radius: $sz*1/3;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: $sz*5 0;
+    transition: 500ms ease;
+    position: relative;
+    width: 100%;
+
+    @media (min-width:576px) {
+        max-width: 600px;
+        padding: $sz*2 $sz*4;
+        margin:80px auto;
+    }
+
+    @media (min-width:576px) and (max-width:768px) {
+        width: 66%;
+        padding: 20px 40px;
+        margin: 3vh auto;
+    }
+}
+
+  
+.addTodo{
+    height: 7vh;
+    border-radius: 2px;
+    width: 100%;
+    background: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: $sz/2 $sz;
+    // padding-right: 0;
+    box-shadow: 0 0 5 1px $color-dark-overlay;
+    input{
+        @include text($color-black,$text-regular,22px,28px,30px);
+        height: 100%;
+        width:84%;
+        background: transparent;
+        outline: none;
+        border: none;
+        padding-left: $sz;
+        &:focus{
+            height: 100%;
+        }
+
+    }
+
+    @media (min-width:576px) {
+        height: 8vh;
+        width: 55%;
+        margin: auto;
+        .add{
+            margin-right: $sz*3/2;
+        }
+    }
+
+    @media (min-width:576px) and (max-width:768px) {
+        width: 90%;
+    }
+}
+
+.expired{
+    box-shadow:0px 0px 5px 1px $color-red;
+    h2{
+        color: $color-mento;
+    }
+    p{
+        display: flex;
+        justify-content: space-between;
+        width: 78%;
+        align-items: center;
+        @include text($color-cyan,$text-regular,14px ,26px ,20px);
+        margin-left: 0;
+    }
+}
+
+.completed{
+    box-shadow:0px 0px 5px 1px $color-mento;
+    h2{
+        color: $color-cyan;
+    }
+    .ctls,.life{
+        display: none;
+
+    }
+
+    p{
+        display: flex;
+        justify-content: space-between;
+        width: 78%;
+        align-items: center;
+        @include text($color-cyan,$text-regular,14px ,26px ,20px);
+        margin-left: 0;
+    }
+
+}
+
+
+.current{
+    box-shadow:0px 0px 5px 1px $color-cyan;
+    p{
+        display: flex;
+        justify-content: space-between;
+        width: 78%;
+        align-items: center;
+        @include text($color-cyan,$text-regular,14px ,26px ,20px);
+        margin-left: 0;
+    }
+
+    .ctls{
+        display: flex;
+        position: absolute;
+        right: 4vw;
+        justify-content: space-between;
+        .close{
+            margin-left: $sz/2;
+        }
+        // width: 40px;
+    }
+
+    @media (min-width:576px) {
+        max-width: 900px;
+        padding: $sz*2 $sz*6;
+        .ctls{
+            right:1vw;
+            // width: 2vw;
+            
+            font-size: 25px;
+
+            .close{
+                margin-left: $sz*2;
+            }
+        }
+    }
+}
+    
+
+
+.token{
+    padding: $sz*2;
+    background: linear-gradient(15deg, $color-hotie,#323);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 4px;
+    width: 90%;
+
+    input{
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        @include text($color-cyan,$text-italic,25px,28px,32px);
+    }
+
+    @media (min-width:576px) {
+        width: 40%;
+        p{
+            width: 90%;
+        }
+        .save{
+            transition: 400ms ease;
+            &:hover{
+                color: $color-mento;
+            }
+        }
+    }
+}
+
+.bliss{
+    position: absolute;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    top :0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms ease-in;
+}
+
+.ghost{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.freeze{
+    pointer-events: none;
+    opacity: .95;
+    background:linear-gradient(45deg, rgb(8, 8, 8),rgb(19, 6, 19)) ;
+    color: $color-red;
+    .life{
+        color: red;
+    }
+    .ctls{
+        visibility: hidden;
+    }
+}

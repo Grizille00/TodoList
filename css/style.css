@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.add {
+  margin: 10px auto;
+  color: rgba(255, 123, 0, 0.651);
+  font-family: "Montserrat-Bold";
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 576px) {
+  .add {
+    font-size: 50px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .add {
+    font-size: 30px;
+  }
+}
+
+.save {
+  margin: 10px auto;
+  color: #eee;
+  font-family: "Montserrat-Bold";
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+@media (min-width: 576px) {
+  .save {
+    font-size: 50px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .save {
+    font-size: 30px;
+  }
+}
+
+body {
+  background: url("../img/editician zone (73).jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: cyan;
+  font-family: "Montserrat-Regulaer";
+}
+
+h1 {
+  margin: 10px auto;
+  color: rgba(255, 123, 0, 0.651);
+  font-family: "Hacked";
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 7vh;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  h1 {
+    font-size: 75px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  h1 {
+    font-size: 45px;
+  }
+}
+@media (min-width: 576px) {
+  h1 {
+    text-align: center;
+  }
+}
+
+h2 {
+  margin: 10px auto;
+  color: #eee;
+  font-family: "Hacked";
+  font-size: 20px;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  h2 {
+    font-size: 35px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  overflow: auto;
+  max-height: 40vh;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: linear-gradient(45deg, #200429, #c00be4);
+  margin-top: 10px;
+  transition: 250ms ease;
+  position: relative;
+}
+@media (min-width: 576px) {
+  ul {
+    height: 100%;
+  }
+  ul li {
+    padding: 15px;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin: 10px auto;
+  color: #da0468;
+  font-family: "Montserrat-Bold";
+  font-size: 35px;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  button {
+    font-size: 50px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  button {
+    font-size: 40px;
+  }
+}
+
+.toggle {
+  transform: rotate(0);
+  transition: 250ms ease-in;
+}
+
+.gloak {
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+}
+.gloak ul {
+  position: relative;
+}
+.gloak ul li {
+  top: 0;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+.gloak .toggle {
+  transform: rotate(180deg);
+}
+@media (min-width: 576px) {
+  .gloak {
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+  }
+  .gloak:hover {
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  .gloak:hover .toggle {
+    opacity: 1;
+  }
+  .gloak .toggle {
+    position: absolute;
+    opacity: 0;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .gloak .toggle {
+    opacity: 1;
+  }
+}
+
+.main {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  padding: 20px 10px;
+}
+@media (min-width: 576px) {
+  .main {
+    padding: 20px 40px;
+  }
+}
+
+.todos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.holder {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  padding: 10px 25px;
+  border-radius: 3.3333333333px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0;
+  transition: 500ms ease;
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .holder {
+    max-width: 600px;
+    padding: 20px 40px;
+    margin: 80px auto;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .holder {
+    width: 66%;
+    padding: 20px 40px;
+    margin: 3vh auto;
+  }
+}
+
+.addTodo {
+  height: 7vh;
+  border-radius: 2px;
+  width: 100%;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 5px 10px;
+  box-shadow: 0 0 5 1px rgba(0, 0, 0, 0.5);
+}
+.addTodo input {
+  margin: 10px auto;
+  color: #141414;
+  font-family: "Montserrat-Regulaer";
+  font-size: 22px;
+  text-align: center;
+  height: 100%;
+  width: 84%;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+}
+@media (min-width: 576px) {
+  .addTodo input {
+    font-size: 30px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .addTodo input {
+    font-size: 28px;
+  }
+}
+.addTodo input:focus {
+  height: 100%;
+}
+@media (min-width: 576px) {
+  .addTodo {
+    height: 8vh;
+    width: 55%;
+    margin: auto;
+  }
+  .addTodo .add {
+    margin-right: 15px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .addTodo {
+    width: 90%;
+  }
+}
+
+.expired {
+  box-shadow: 0px 0px 5px 1px red;
+}
+.expired h2 {
+  color: rgba(255, 123, 0, 0.651);
+}
+.expired p {
+  display: flex;
+  justify-content: space-between;
+  width: 78%;
+  align-items: center;
+  margin: 10px auto;
+  color: cyan;
+  font-family: "Montserrat-Regulaer";
+  font-size: 14px;
+  text-align: center;
+  margin-left: 0;
+}
+@media (min-width: 576px) {
+  .expired p {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .expired p {
+    font-size: 26px;
+  }
+}
+
+.completed {
+  box-shadow: 0px 0px 5px 1px rgba(255, 123, 0, 0.651);
+}
+.completed h2 {
+  color: cyan;
+}
+.completed .ctls, .completed .life {
+  display: none;
+}
+.completed p {
+  display: flex;
+  justify-content: space-between;
+  width: 78%;
+  align-items: center;
+  margin: 10px auto;
+  color: cyan;
+  font-family: "Montserrat-Regulaer";
+  font-size: 14px;
+  text-align: center;
+  margin-left: 0;
+}
+@media (min-width: 576px) {
+  .completed p {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .completed p {
+    font-size: 26px;
+  }
+}
+
+.current {
+  box-shadow: 0px 0px 5px 1px cyan;
+}
+.current p {
+  display: flex;
+  justify-content: space-between;
+  width: 78%;
+  align-items: center;
+  margin: 10px auto;
+  color: cyan;
+  font-family: "Montserrat-Regulaer";
+  font-size: 14px;
+  text-align: center;
+  margin-left: 0;
+}
+@media (min-width: 576px) {
+  .current p {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .current p {
+    font-size: 26px;
+  }
+}
+.current .ctls {
+  display: flex;
+  position: absolute;
+  right: 4vw;
+  justify-content: space-between;
+}
+.current .ctls .close {
+  margin-left: 5px;
+}
+@media (min-width: 576px) {
+  .current {
+    max-width: 900px;
+    padding: 20px 60px;
+  }
+  .current .ctls {
+    right: 1vw;
+    font-size: 25px;
+  }
+  .current .ctls .close {
+    margin-left: 20px;
+  }
+}
+
+.token {
+  padding: 20px;
+  background: linear-gradient(15deg, #da0468, #323);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+  width: 90%;
+}
+.token input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 10px auto;
+  color: cyan;
+  font-family: "Montserrat-Italic";
+  font-size: 25px;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  .token input {
+    font-size: 32px;
+    text-align: left;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .token input {
+    font-size: 28px;
+  }
+}
+@media (min-width: 576px) {
+  .token {
+    width: 40%;
+  }
+  .token p {
+    width: 90%;
+  }
+  .token .save {
+    transition: 400ms ease;
+  }
+  .token .save:hover {
+    color: rgba(255, 123, 0, 0.651);
+  }
+}
+
+.bliss {
+  position: absolute;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 400ms ease-in;
+}
+
+.ghost {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.freeze {
+  pointer-events: none;
+  opacity: 0.95;
+  background: linear-gradient(45deg, #080808, #130613);
+  color: red;
+}
+.freeze .life {
+  color: red;
+}
+.freeze .ctls {
+  visibility: hidden;
+}/*# sourceMappingURL=style.css.map */

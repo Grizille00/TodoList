@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Fern TodoList
+        link(rel="stylesheet", href="./fonts/fonts.css")
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/bsi/bootstrap-icons.css")
+        link(rel="stylesheet", href="./css/style.css")
+    body
+        .main
+            h1 ArcAngel Todo List
+            
+            .addTodo  
+                //- label Add Todo
+                input(type="text" placeholder="Add Todo" name='newTodo')
+                //- button.add
+                i.add.bi.bi-plus-square
+            .todos 
+                .current.holder
+                    h2 Current Todos
+                    ul.current-todo-list
+                        //- li(todo_id="C4810BF")
+                        //-     p
+                        //-         span jdskjdksjd
+                        //-         span 12/43/237637/328732/21
+                        //-     span.ctls
+                        //-         i(class="bi bi-check2-square" todo_id="C4810BF")
+                        //-         i(class="bi bi-x-square close" todo_id="C4810BF")
+                    button.toggle
+                        i.bi.bi-chevron-double-up
+
+
+                .completed.holder.gloak
+                    h2 Completed Todos
+                    ul.completed-todo-list
+                        
+                    button.toggle
+                        i.bi.bi-chevron-double-up
+
+                .expired.holder.gloak
+                    h2 Expired Todos
+                    ul.expired-todo-list
+                        
+                    button.toggle
+                        i.bi.bi-chevron-double-up
+
+            .bliss.ghost
+                .token 
+                    h2 Set Task Timing
+                    input(type="datetime-local", name="lifetime")
+                    i.save.bi.bi-save-fill
+
+            
+
+        script(src="{% static 'js/bootstrap.bundle.min.js' %}") 
+        script(src="./js/main.js") 
+
+
+    
