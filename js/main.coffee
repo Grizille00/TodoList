@@ -177,3 +177,9 @@ input_btn.addEventListener 'blur',()=>
     el = get "i.add"
     el.focus()
 
+
+$ window
+.on "load", ->
+    $ '#preloader' 
+        .fadeOut 500
+    1

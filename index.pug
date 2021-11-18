@@ -10,6 +10,13 @@ html(lang="en")
         link(rel="stylesheet", href="/bsi/bootstrap-icons.css")
         link(rel="stylesheet", href="./css/style.css")
     body
+        //- Preloader
+        #preloader
+            .sk-three-bounce
+                .sk-child.sk-bounce1
+                .sk-child.sk-bounce2
+                .sk-child.sk-bounce3
+
         .main
             h1 ArcAngel Todo List
             
@@ -54,8 +61,8 @@ html(lang="en")
                     i.save.bi.bi-save-fill
 
             
-
-        script(src="{% static 'js/bootstrap.bundle.min.js' %}") 
+        script(src="./js/jquery-2.2.0.min.js") 
+        script(src="./js/bootstrap.bundle.min.js") 
         script(src="./js/main.js") 
 
 

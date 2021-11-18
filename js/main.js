@@ -217,6 +217,11 @@
     return el.focus();
   });
 
+  $(window).on("load", function() {
+    $('#preloader').fadeOut(500);
+    return 1;
+  });
+
 }).call(this);
 
 
